@@ -54,3 +54,23 @@ inline RoomWallLayoutID & operator ^=(RoomWallLayoutID & left, RoomWallLayoutID 
 	left = (left ^ right);
 	return left;
 }
+
+inline bool hasWallLeft(RoomWallLayoutID layout)
+{
+	return ((layout & RoomWallLayoutID::OneLeft) != RoomWallLayoutID::Zero);
+}
+
+inline bool hasWallRight(RoomWallLayoutID layout)
+{
+	return ((layout & RoomWallLayoutID::OneRight) != RoomWallLayoutID::Zero);
+}
+
+inline bool hasWallUp(RoomWallLayoutID layout)
+{
+	return ((layout & RoomWallLayoutID::OneUp) != RoomWallLayoutID::Zero);
+}
+
+inline bool hasWallDown(RoomWallLayoutID layout)
+{
+	return ((layout & RoomWallLayoutID::OneDown) != RoomWallLayoutID::Zero);
+}
