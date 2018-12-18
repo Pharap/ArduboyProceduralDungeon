@@ -79,7 +79,7 @@ const uint8_t * const roomLookup[] PROGMEM =
 	RoomWallLayoutData::Four,
 };
 
-const uint8_t * Dungeon::getRoomImage(RoomWallLayoutID roomLayout)
+const uint8_t * Dungeon::getRoomImage(RoomWallLayoutID roomLayout) const
 {
 	const uint8_t index = static_cast<uint8_t>(roomLayout);
 	
@@ -120,6 +120,11 @@ void Dungeon::draw() {
 }
 
 RoomWallLayoutID & Dungeon::getRoomLayoutAt(uint16_t xpos, uint16_t ypos)
+{
+	return this->rooms[(ypos * width) + xpos];
+}
+
+const RoomWallLayoutID & Dungeon::getRoomLayoutAt(uint16_t xpos, uint16_t ypos) const
 {
 	return this->rooms[(ypos * width) + xpos];
 }
