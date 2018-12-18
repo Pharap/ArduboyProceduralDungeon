@@ -8,10 +8,8 @@ extern Arduboy2 arduboy;
 
 
 RoomWallLayoutID DungeonGenerator::getRoomLayoutFromSeed(uint16_t xpos, uint16_t ypos) {
-    uint32_t xSeed = static_cast<uint32_t>(xpos);
-    uint32_t ySeed = static_cast<uint32_t>(ypos);
-    xSeed = (xSeed*100*100)/1337;
-    ySeed = (ySeed*100*100)/501;
+    uint32_t xSeed = (static_cast<uint32_t>(xpos) * 100 * 100) / 1337;
+    uint32_t ySeed = (static_cast<uint32_t>(ypos) * 100 * 100) / 501;
     uint32_t currentSeed = ((xSeed << 16) | (ySeed << 0));
     randomSeed((currentSeed > 0) ? currentSeed : 1);
 

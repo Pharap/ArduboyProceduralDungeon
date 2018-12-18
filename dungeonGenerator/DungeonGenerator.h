@@ -6,8 +6,8 @@
 #include "RoomWallLayoutID.h"
 
 namespace DungeonGenerator {
-        RoomWallLayoutID getRoomLayoutFromSeed(uint16_t xpos, uint16_t ypos);
-        RoomWallLayoutID getRoomLayoutFromNeighbours(uint16_t xpos, uint16_t ypos);
+    RoomWallLayoutID getRoomLayoutFromSeed(uint16_t xpos, uint16_t ypos);
+    RoomWallLayoutID getRoomLayoutFromNeighbours(uint16_t xpos, uint16_t ypos);
 };
 
 class Dungeon {
